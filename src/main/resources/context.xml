@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="de.adesso.maasch.beacon" />
+
+	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="classesToBeBound">
+			<list>
+				<value>de.adesso.maasch.beacon.model.ContentList</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="beaconDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<context:property-placeholder location="jdbc.properties" />
+
+	<bean id="beaconDao" class="de.adesso.maasch.beacon.model.dao.BeaconDao">
+		<property name="dataSource" ref="beaconDataSource" />
+	</bean>
+
+	<bean id="beaconPositionDao" class="de.adesso.maasch.beacon.model.dao.BeaconPositionDao">
+		<property name="dataSource" ref="beaconDataSource" />
+		<property name="contentDao" ref="cachedContentDao" />
+	</bean>
+
+	<bean id="facilitynDao" class="de.adesso.maasch.beacon.model.dao.FacilityDao">
+		<property name="dataSource" ref="beaconDataSource" />
+	</bean>
+
+	<bean id="configDao" class="de.adesso.maasch.beacon.model.dao.ConfigDao">
+		<property name="dataSource" ref="beaconDataSource" />
+	</bean>
+
+	<bean id="contentsFileName" class="java.lang.String">
+		<constructor-arg value="contents.xml" />
+	</bean>
+
+	<bean id="directContentDao" class="de.adesso.maasch.beacon.model.dao.DirectContentDao">
+		<property name="contentsFileName" ref="contentsFileName" />
+	</bean>
+
+	<bean id="cachedContentDao" class="de.adesso.maasch.beacon.model.dao.CachedContentDao">
+		<property name="contentDao" ref="directContentDao" />
+		<property name="configProvider" ref="configProvider" />
+		<property name="contentsFileName" ref="contentsFileName" />
+	</bean>
+
+</beans>
