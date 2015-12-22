@@ -1,0 +1,27 @@
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_beacon_id" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Beacon-ID"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_uuid" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="UUID"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_NUMBER name="cs_major" allowEmpty="no" hFill="yes" noBreak="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Major" format="#"/>
+    </LANGINFOS>
+  </CMS_INPUT_NUMBER>
+
+  <CMS_INPUT_NUMBER name="cs_minor" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Minor" format="#"/>
+    </LANGINFOS>
+  </CMS_INPUT_NUMBER>
+
+</CMS_MODULE>

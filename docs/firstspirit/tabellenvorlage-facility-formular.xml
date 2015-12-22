@@ -1,0 +1,38 @@
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_firm_name" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Firm name"/>
+      <LANGINFO lang="DE" label="Firma"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_firm_name2" allowEmpty="yes" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Optional information"/>
+      <LANGINFO lang="DE" label="Zusätzliche Angaben"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_street" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Street"/>
+      <LANGINFO lang="DE" label="Straße"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_postal_code" allowEmpty="no" hFill="yes" noBreak="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Postal code"/>
+      <LANGINFO lang="DE" label="Postleitzahl"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_city" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="City"/>
+      <LANGINFO lang="DE" label="Stadt"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+</CMS_MODULE>

@@ -1,0 +1,73 @@
+<RULES>
+<ON_SAVE>
+<IF>
+<NOT>
+<PROPERTY source="cs_uuid" name="EMPTY"/>
+</NOT>
+</IF>
+<WITH>
+<MATCHES regex="^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$">
+<PROPERTY source="cs_uuid" name="VALUE"/>
+</MATCHES>
+</WITH>
+<DO>
+<VALIDATION>
+<PROPERTY source="cs_uuid" name="VALID"/>
+<MESSAGE lang="*" text="Invalid UUID"/>
+<MESSAGE lang="DE" text="Ungültige UUID"/>
+</VALIDATION>
+</DO>
+</ON_SAVE>
+<ON_SAVE>
+<IF>
+<NOT>
+<PROPERTY source="cs_major" name="EMPTY"/>
+</NOT>
+</IF>
+<WITH>
+<AND>
+<GREATER_THAN>
+<PROPERTY source="cs_major" name="VALUE"/>
+<NUMBER>0</NUMBER>
+</GREATER_THAN>
+<LESS_THAN>
+<PROPERTY source="cs_major" name="VALUE"/>
+<NUMBER>65536</NUMBER>
+</LESS_THAN>
+</AND>
+</WITH>
+<DO>
+<VALIDATION>
+<PROPERTY source="cs_major" name="VALID"/>
+<MESSAGE lang="*" text="Range 0 - 65.535"/>
+<MESSAGE lang="DE" text="Wertebereich 0 - 65.535"/>
+</VALIDATION>
+</DO>
+</ON_SAVE>
+<ON_SAVE>
+<IF>
+<NOT>
+<PROPERTY source="cs_minor" name="EMPTY"/>
+</NOT>
+</IF>
+<WITH>
+<AND>
+<GREATER_THAN>
+<PROPERTY source="cs_minor" name="VALUE"/>
+<NUMBER>0</NUMBER>
+</GREATER_THAN>
+<LESS_THAN>
+<PROPERTY source="cs_minor" name="VALUE"/>
+<NUMBER>65536</NUMBER>
+</LESS_THAN>
+</AND>
+</WITH>
+<DO>
+<VALIDATION>
+<PROPERTY source="cs_minor" name="VALID"/>
+<MESSAGE lang="*" text="Range 0 - 65.535"/>
+<MESSAGE lang="DE" text="Wertebereich 0 - 65.535"/>
+</VALIDATION>
+</DO>
+</ON_SAVE>
+</RULES>

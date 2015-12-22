@@ -1,0 +1,33 @@
+<content fs_id="$CMS_VALUE(#row.getId())$">
+	<message>$CMS_VALUE(cs_app_message)$</message>
+	<title>$CMS_VALUE(#row
+		.page_reference.getPageRef()
+		.getPage()
+		.getFormData()
+		.get(null, "pt_headline")
+		.get()
+		.toString())$
+	</title>
+	<relative_url>$CMS_REF(#row
+		.page_reference, 
+			templateSet:"html", 
+			abs:0)$
+	</relative_url>
+	<keywords>
+		$CMS_IF(!#row.keywordList.isEmpty)$
+			$CMS_FOR(_keyword, #row.keywordList)$
+				<keyword>$CMS_VALUE(_keyword.name)$</keyword>
+			$CMS_END_FOR$
+		$CMS_END_IF$
+	</keywords>
+	<last_modification>$CMS_VALUE(#row
+		.page_reference
+		.getPageRef()
+		.getPage()
+		.getLastChanged())$
+	</last_modification>
+	<show_after_visits>$CMS_VALUE(
+		cs_show_after_visits, 
+		default:0)$
+	</show_after_visits>
+</content>

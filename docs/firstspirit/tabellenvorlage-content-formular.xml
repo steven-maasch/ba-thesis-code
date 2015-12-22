@@ -1,0 +1,114 @@
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Linked Page"/>
+        <LANGINFO lang="DE" label="Verknüpfte Seite"/>
+      </LANGINFOS>
+
+      <FS_REFERENCE name="cs_page_reference" allowEmpty="no" hFill="yes" useLanguages="no">
+        <FILTER>
+          <ALLOW type="pageref"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Linked Page"/>
+          <LANGINFO lang="DE" label="Verknüpfte Seite"/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name="."/>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <CMS_INPUT_TEXT name="cs_app_message" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Nachricht an den Nutzer"/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Keywords"/>
+        <LANGINFO lang="DE" label="Schlagwörter"/>
+      </LANGINFOS>
+
+      <FS_LIST name="cs_keywords" allowEmpty="no" hFill="yes">
+        <DATASOURCE type="database" useLanguages="no">
+          <LABELS>
+            <LABEL lang="*">#item.cs_name</LABEL>
+          </LABELS>
+          <ACTIONS>
+            <ACTION name="ADD"/>
+            <ACTION name="REMOVE"/>
+            <ACTION name="UP"/>
+            <ACTION name="DOWN"/>
+            <ACTION name="GOTO"/>
+            <ACTION name="EDIT"/>
+          </ACTIONS>
+          <COLUMNS>
+            <COLUMN show="no">#identifier</COLUMN>
+            <COLUMN show="no">#fs_id</COLUMN>
+            <COLUMN show="yes" width="310">cs_name</COLUMN>
+          </COLUMNS>
+          <LAYOUT>
+            <ADD component="stackedview" constraint="hide"/>
+            <ADD component="toolbar" constraint="top"/>
+            <ADD component="overview" constraint="center"/>
+          </LAYOUT>
+          <table>BeaconManagement.keyword</table>
+        </DATASOURCE>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Keywords"/>
+          <LANGINFO lang="DE" label="Schlagwörter"/>
+        </LANGINFOS>
+      </FS_LIST>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Position"/>
+      </LANGINFOS>
+
+      <CMS_INPUT_LIST name="cs_beacon_position" allowEmpty="no" hFill="yes" useLanguages="no">
+        <CMS_INCLUDE_OPTIONS type="database">
+          <LABELS>
+            <LABEL lang="*">#item.name + " - " + #item.facility.firm_name + ", " + 
+          #item.facility.street + ", " + #item.facility.postal_code + ", " + #item.facility.city</LABEL>
+          </LABELS>
+          <TABLE>BeaconManagement.beacon_position</TABLE>
+        </CMS_INCLUDE_OPTIONS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Position"/>
+        </LANGINFOS>
+      </CMS_INPUT_LIST>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Show after visits"/>
+        <LANGINFO lang="DE" label="Anzeige nach Anzahl Besuchen"/>
+      </LANGINFOS>
+
+      <CMS_INPUT_NUMBER
+        name="cs_show_after_visits"
+        allowEmpty="yes"
+        hFill="yes"
+        noBreak="yes"
+        singleLine="no"
+        useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Show after visits"/>
+          <LANGINFO lang="DE" label="Anzeige nach Anzahl Besuchen"/>
+        </LANGINFOS>
+      </CMS_INPUT_NUMBER>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+</CMS_MODULE>

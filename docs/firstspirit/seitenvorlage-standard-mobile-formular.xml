@@ -1,0 +1,26 @@
+<CMS_MODULE>
+
+    <CMS_INPUT_TEXT name="pt_title" 
+        hFill="yes" 
+        singleLine="no" 
+        useLanguages="yes">
+        <LANGINFOS>
+            <LANGINFO lang="*" label="Browser title" description=""/>
+            <LANGINFO lang="DE" label="Browser-Titelzeile" description=""/>
+        </LANGINFOS>
+    </CMS_INPUT_TEXT>
+
+    <CMS_INPUT_TEXT name="pt_headline" 
+        hFill="yes" 
+        noBreak="yes" 
+        singleLine="no" 
+        useLanguages="yes">
+        <LANGINFOS>
+            <LANGINFO lang="*" label="Headline" 
+                description="Insert your headline for that page."/>
+            <LANGINFO lang="DE" label="Überschrift" 
+                description="Überschrift der Seite."/>
+        </LANGINFOS>
+    </CMS_INPUT_TEXT>
+
+</CMS_MODULE>

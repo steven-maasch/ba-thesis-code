@@ -1,0 +1,9 @@
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_name" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Name" description=""/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+</CMS_MODULE>

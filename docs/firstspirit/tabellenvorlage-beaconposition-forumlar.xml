@@ -1,0 +1,29 @@
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_name" allowEmpty="no" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Name" description=""/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <FS_DATASET name="cs_beacon" allowEmpty="no" hFill="yes" noBreak="yes" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Referenced beacon" description=""/>
+      <LANGINFO lang="DE" label="Verknüpfter Beacon" description=""/>
+    </LANGINFOS>
+    <SOURCES>
+      <CONTENT name="beacons"/>
+    </SOURCES>
+  </FS_DATASET>
+
+  <FS_DATASET name="cs_facility" allowEmpty="no" hFill="yes" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Referenced facility" description=""/>
+      <LANGINFO lang="DE" label="Verknüpfter Standort" description=""/>
+    </LANGINFOS>
+    <SOURCES>
+      <CONTENT name="standorte"/>
+    </SOURCES>
+  </FS_DATASET>
+
+</CMS_MODULE>

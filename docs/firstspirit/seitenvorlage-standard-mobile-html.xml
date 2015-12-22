@@ -1,0 +1,23 @@
+<CMS_HEADER>
+</CMS_HEADER>
+<!DOCTYPE html>
+<html lang="$CMS_VALUE(#global.language.abbreviation.upperCase)$">
+<head>
+  <title>$CMS_VALUE(pt_title)$</title>
+  <meta charset="$CMS_VALUE(#global.encoding)$">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="$CMS_REF(media:"jquery_mobile_1_4_3_min_css")$">
+  <script src="$CMS_REF(media:"jquery_1_11_1_min_js")$"></script>
+  <script src="$CMS_REF(media:"jquery_mobile_1_4_3_min_js")$"></script>
+
+</head>
+<body>
+  <div data-role="page">
+    <div role="main" class="ui-content">
+      <h3>$CMS_VALUE(pt_headline)$</h3>
+      $CMS_VALUE(#global.page.body("main_content"))$
+    </div>
+  </div>
+</body>
+</html>

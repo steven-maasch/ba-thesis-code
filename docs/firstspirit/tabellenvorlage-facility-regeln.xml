@@ -1,0 +1,21 @@
+<RULES>
+<ON_SAVE>
+<IF>
+<NOT>
+<PROPERTY source="cs_postal_code" name="EMPTY"/>
+</NOT>
+</IF>
+<WITH>
+<MATCHES regex="^[0-9]{5}$">
+<PROPERTY source="cs_postal_code" name="VALUE"/>
+</MATCHES>
+</WITH>
+<DO>
+<VALIDATION>
+<PROPERTY source="cs_postal_code" name="VALID"/>
+<MESSAGE lang="*" text="Invalid zip"/>
+<MESSAGE lang="DE" text="Ungültige Postleitzahl"/>
+</VALIDATION>
+</DO>
+</ON_SAVE>
+</RULES>

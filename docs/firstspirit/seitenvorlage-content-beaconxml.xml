@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="$CMS_VALUE(#global.encoding)$"?>
+<contents>
+	$CMS_VALUE(#global.page.body("content"))$
+</contents>
